@@ -1,0 +1,45 @@
+
+    <head>
+    <meta charset="UTF-8">
+    <title>App</title>
+    <style>
+    body{
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+
+    .button{
+      letter-spacing: 1px;
+      font-size: 20px;
+      padding: 10px 20px;
+      border:none;
+      border-radius:5px;
+      color:black;
+      position: relative;
+    }
+
+    h1{
+      text-align: center;
+    }
+    input{
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+
+    <form method="get" action="/nft_search">
+      <h1>
+          NFT address
+      </h1>
+      <input name="args" placeholder="write here">
+      <div style="text-align:center"> <button class="button" input type="submit" >Send</button><div>
+    </div>
+    </form>
+    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+
+
+</body></html>
