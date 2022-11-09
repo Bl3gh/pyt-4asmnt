@@ -10,7 +10,7 @@ from flask_login import LoginManager, UserMixin, login_user, login_required, log
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'thisissecret'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:0823@localhost:5432/Piton4asmnt'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:0823@localhost:5432/piton4asmnt'
 app.config['SQLALCHEMY TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 Bootstrap(app)
