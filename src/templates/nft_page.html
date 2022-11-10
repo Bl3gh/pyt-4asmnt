@@ -1,45 +1,69 @@
+{% extends "bootstrap/base.html" %}
 
-    <head>
-    <meta charset="UTF-8">
-    <title>App</title>
-    <style>
-    body{
-      display:flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+{% block title %}
+Demo App
+{% endblock %}
 
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='starter-template.css')}}">
+{% endblock %}
 
-    .button{
-      letter-spacing: 1px;
-      font-size: 20px;
-      padding: 10px 20px;
-      border:none;
-      border-radius:5px;
-      color:black;
-      position: relative;
-    }
+{% block content %}
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+            <li><a href="{{ url_for('nft_page') }}">Nft Page</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
 
-    h1{
-      text-align: center;
-    }
-    input{
-        text-align: center;
-    }
-    </style>
-</head>
-<body>
-
-    <form method="get" action="/nft_search">
-      <h1>
-          NFT address
-      </h1>
-      <input name="args" placeholder="write here">
-      <div style="text-align:center"> <button class="button" input type="submit" >Send</button><div>
+    <div class="container">
+    <div class="search">
+      <form method="get" action="/nft_search">
+        <input name="args" placeholder="write here">
+        <div style="text-align:center"> <button class="button" input type="submit" >Send</button><div>
+        <button class="button" a href="{{ url_for('logout') }}">Log Out</a>
+      </div>
+      </form>
     </div>
-    </form>
-    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+    <style>
+      .button{
+        letter-spacing: 1px;
+        font-size: 20px;
+        padding: 10px 20px;
+        border:none;
+        border-radius:5px;
+        color:black;
+        position: relative;
+      }
+  
+      h1{
+        text-align: center;
+      }
+      input{
+          text-align: center;
+      }
+      form {
+        margin-top: 15%;
+        text-align: center;
+      }
+      </style>
 
-
+    </div><!-- /.container -->
+{% endblock %}
 </body></html>
